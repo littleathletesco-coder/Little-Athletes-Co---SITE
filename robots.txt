@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://littleathletesco.com.au/sitemap.xml
