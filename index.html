@@ -201,6 +201,38 @@ footer p{margin:.3rem auto;max-width:760px}
 footer a{color:#fff}
 footer b{color:var(--orange);font-weight:800}
 
+
+/* HOVER MOTION */
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .btn{transition:background .2s,transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,107,0,.35)}
+  .hero-art img{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .hero-art:hover img{transform:rotate(-3deg) translateY(-8px) scale(1.02)}
+  .hero-art::before{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .hero-art:hover::before{transform:scale(1.05)}
+  .chip{transition:background .2s,border-color .2s}
+  .chip:hover{background:rgba(46,204,113,.15);border-color:var(--green)}
+  .skill,.ben,.step,.stat{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .skill:hover{transform:translateY(-6px);border-color:var(--orange);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+  .skill .ic{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+  .skill:hover .ic{transform:scale(1.15) rotate(-8deg)}
+  .ben:hover,.step:hover,.stat:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(11,31,58,.12)}
+  .step .n{transition:background .25s,color .25s,transform .3s}
+  .step:hover .n{background:var(--orange);color:#fff;transform:scale(1.1)}
+  .comp div{transition:background .2s,transform .2s}
+  .comp div:hover{background:rgba(46,204,113,.14);transform:translateX(4px)}
+  .note-card{transition:transform .35s ease}
+  .note-card:hover{transform:rotate(-1deg) scale(1.02)}
+  .coach-photo{transition:transform .35s ease,border-color .35s}
+  .coach-photo:hover{transform:scale(1.04);border-color:var(--green)}
+  .faq summary{transition:color .2s}
+  .faq summary:hover{color:var(--orange-d)}
+  .logo svg{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+  .logo:hover svg{transform:translateY(-3px) rotate(-6deg)}
+  .link-cta{display:inline-block;transition:transform .2s}
+  .link-cta:hover{transform:translateX(4px)}
+}
+
 @media(max-width:900px){
   .hero-inner,.notes,.contact,.gap,.coach{grid-template-columns:1fr}
   .skills,.benefits,.comp{grid-template-columns:1fr 1fr}
