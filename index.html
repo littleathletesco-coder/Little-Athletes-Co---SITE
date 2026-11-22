@@ -113,7 +113,18 @@ nav .btn{padding:8px 18px;font-size:14px}
 .hero-btns{display:flex;gap:10px;flex-wrap:wrap}
 .hero-art{position:relative;align-self:end;display:flex;justify-content:center}
 .hero-art::before{content:'';position:absolute;width:82%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 45% 40%,#36dd80,#1E9E55);bottom:14%;left:9%}
-.hero-art img{position:relative;width:100%;max-width:430px;height:auto;display:block}
+.mascot-wrap{position:relative;width:100%;max-width:430px}
+.hero-art img{position:relative;width:100%;height:auto;display:block}
+.hero-art img.ball{position:absolute;left:12.56%;top:47.67%;width:11%;height:auto;animation:ballBounce 2.4s cubic-bezier(.45,0,.55,1) infinite;transform-origin:50% 100%}
+@keyframes ballBounce{
+  0%,100%{transform:translateY(0) scale(1,1)}
+  8%{transform:translateY(0) scale(1.12,.88)}
+  45%{transform:translateY(-170%) scale(.96,1.04)}
+  55%{transform:translateY(-170%) scale(1,1)}
+  92%{transform:translateY(0) scale(1,1)}
+}
+.hero-art:hover img.ball{animation-duration:1.2s}
+@media(prefers-reduced-motion:reduce){.hero-art img.ball{animation:none}}
 .waves{position:absolute;left:0;right:0;bottom:0;pointer-events:none;opacity:.55}
 
 /* PROBLEM */
@@ -206,8 +217,8 @@ footer b{color:var(--orange);font-weight:800}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){
   .btn{transition:background .2s,transform .2s,box-shadow .2s}
   .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,107,0,.35)}
-  .hero-art img{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-  .hero-art:hover img{transform:rotate(-3deg) translateY(-8px) scale(1.02)}
+  .mascot-wrap{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .hero-art:hover .mascot-wrap{transform:rotate(-3deg) translateY(-8px) scale(1.02)}
   .hero-art::before{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
   .hero-art:hover::before{transform:scale(1.05)}
   .chip{transition:background .2s,border-color .2s}
@@ -238,7 +249,7 @@ footer b{color:var(--orange);font-weight:800}
   .skills,.benefits,.comp{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr}
   .nav-links{display:none}
-  .hero-art img{max-width:260px}
+  .mascot-wrap{max-width:260px}
   .hero-copy{padding-bottom:1.5rem}
   .coach-photo{margin:0 auto}
 }
@@ -303,7 +314,10 @@ footer b{color:var(--orange);font-weight:800}
       </div>
     </div>
     <div class="hero-art">
-      <img src="/images/mascot-hero.webp" width="900" height="1393" alt="Little Athletes Co. kangaroo mascot playing sport, the face of our Brisbane childcare sports incursions"/>
+      <div class="mascot-wrap">
+        <img src="/images/mascot-hero.webp" width="900" height="1393" alt="Little Athletes Co. kangaroo mascot playing sport, the face of our Brisbane childcare sports incursions"/>
+        <img class="ball" src="/images/ball.webp" width="99" height="102" alt="" aria-hidden="true"/>
+      </div>
     </div>
   </div>
 </section>
